@@ -10,8 +10,8 @@ function Footer() {
   };
 
   return (
-    <footer className="bg-[#353535] text-white py-16 pt-24 p-12">
-      <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between sm:justify-center gap-16 sm:gap-[35rem]">
+    <footer className="bg-[#353535] text-white py-10 pt-20">
+      <div className="max-w-8xl mx-auto flex flex-col sm:flex-row justify-between sm:justify-center gap-16 sm:gap-[35rem]">
         <div className="mb-16 sm:mb-0 sm:text-left">
           <div className="mb-6">
             <img src="logo2.png" alt="logo" className="h-20 md:h-28 sm:mx-0" />
@@ -24,8 +24,8 @@ function Footer() {
 
         <div className="flex sm:flex-row sm:text-left justify-between">
           <div className="flex flex-col sm:mr-20 mb-8 sm:mb-0">
-            <h4 className="text-2xl font-semibold mb-6">Quick Links</h4>
-            <ul className="space-y-4 text-lg font-medium">
+            <h4 className="text-xl font-semibold mb-6">Quick Links</h4>
+            <ul className="space-y-3">
               <li>
                 <Link to="/site" className="hover:underline">
                   Sitemap
@@ -65,8 +65,8 @@ function Footer() {
           </div>
 
           <div className="flex flex-col">
-            <h4 className="text-2xl font-semibold mb-6">Legal</h4>
-            <ul className="space-y-4 text-lg font-medium">
+            <h4 className="text-xl font-semibold mb-6">Legal</h4>
+            <ul className="space-y-3 ">
               <li>
                 <Link to="/boiler" className="hover:underline">
                   Terms of use
