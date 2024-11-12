@@ -2,7 +2,7 @@ import React from 'react'
 
 function Component1() {
     return (
-        <div className='bg-[#E5F9FF] flex flex-col justify-center items-center md:h-[100vh] pt-20'>
+        <div className='bg-[#E5F9FF] flex flex-col justify-center items-center md:h-[100vh] pt-20 md:pt-0'>
             <div className='flex flex-col justify-center items-center gap-5 md:mt-40'>
                 <div className='text-[12px] md:text-xl md:text-[1rem]'>WHO WE ARE</div>
                 <div className='text-2xl md:text-[2rem] font-bold'>We’re  – an online <p className='block md:inline'>Canadian insurer</p></div>

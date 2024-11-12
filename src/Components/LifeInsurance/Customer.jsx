@@ -5,7 +5,7 @@ import { useMediaQuery } from 'react-responsive';
 
 function Customer() {
   const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
-
+  console.log("isMobile")
   const testimonials = [
     {
       text: "“Great service, very easy and well-explained procedures and information needed for insurance. Greg was great to work with, and had excellent communication skills. 10/10 recommend.”",
@@ -71,18 +71,18 @@ function Customer() {
           disableButtonsControls
         />
       ) : (
-        <div className="flex flex-wrap justify-center gap-10 text-start text-xs md:text-sm m-10 md:mt-20">
-          <div className="shadow-2xl border-2 w-[80%] md:w-[17%] p-5 pt-10 rounded-3xl md:mb-40 bg-cover bg-center min-h-[300px] bg-white">
+        <div className="flex flex-wrap justify-center gap-5 text-start text-xs md:text-sm m-10 md:mt-20">
+          <div className="shadow-xl border-2 w-[80%] md:w-[18%] p-5 pt-10 rounded-3xl md:mb-40 bg-cover bg-center min-h-[300px] flex flex-col justify-between bg-white">
             <div>
               “Great service, very easy and well-explained procedures and information needed for insurance. Greg was great to work with, and had excellent communication skills. 10/10 recommend.”
             </div>
-            <div className="flex mt-10 md:mt-20 justify-between">
+            <div className=" STAR flex mt-10 md:mt-20 justify-between">
               <div>⭐⭐⭐⭐⭐</div>
               <div className="text-xs md:text-sm font-semibold">- Palakas Fotini</div>
             </div>
           </div>
 
-          <div className="shadow-2xl border-2 w-[80%] md:w-[17%] p-5 pt-10 rounded-3xl md:mt-40 bg-cover bg-center h-[300px] bg-white">
+          <div className="shadow-xl border-2 w-[80%] md:w-[18%] p-5 pt-10 rounded-3xl md:mt-40 bg-cover bg-center h-[350px] flex flex-col justify-between bg-white">
             <div className="w-[95%]">
               Greg is always making sure all my insurance needs are covered. Excellent service and very responsive.. thanks again!
             </div>
@@ -92,17 +92,17 @@ function Customer() {
             </div>
           </div>
 
-          <div className="shadow-2xl border-2 w-[80%] md:w-[17%] p-5 pt-10 rounded-3xl md:mb-40 bg-cover bg-center h-[300px]">
+          <div className="shadow-xl border-2 w-[80%] md:w-[18%] p-5 pt-10 rounded-3xl md:mb-40 bg-cover bg-center h-[350px] flex flex-col justify-between">
             <div className="w-[95%]">
               Greg is always making sure all my insurance needs are covered. Excellent service and very responsive.. thanks again!
             </div>
-            <div className="flex mt-10 md:mt-28 justify-between">
+            <div className="flex justify-between">
               <div>⭐⭐⭐⭐⭐</div>
               <div className="text-xs md:text-sm font-semibold">- Dirk Michon</div>
             </div>
           </div>
 
-          <div className="shadow-2xl border-2 w-[80%] md:w-[17%] pt-10 rounded-3xl md:mt-40 bg-cover bg-center h-[300px] bg-white">
+          <div className="shadow-2xl border-2 w-[80%] md:w-[18%] pt-10 rounded-3xl md:mt-40 bg-cover bg-center h-[350px] flex flex-col justify-between bg-white">
             <div className="w-[95%] p-5">
               Greg is always making sure all my insurance needs are covered. Excellent service and very responsive.. thanks again!
             </div>

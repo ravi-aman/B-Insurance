@@ -5,7 +5,7 @@ import Component3 from '../Components/About/Component3'
 import Component4 from '../Components/About/Component4'
 import Component5 from '../Components/About/Component5'
 import Component9 from '../Components/LifeInsurance/component9'
-import Company from '../Components/About/Company'
+import Company from '../Components/Home/Company'
 
 function AboutUs() {
     return (

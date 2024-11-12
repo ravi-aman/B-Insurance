@@ -79,7 +79,7 @@ function Component1() {
         <div className="fixed inset-0 z-50 flex items-center justify-center">
           <div className="absolute inset-0 bg-black opacity-50"></div>
 
-          <div className="relative bg-white p-4 md:p-8 rounded-lg shadow-lg w-[90%] md:w-[55%] h-[50vh] z-50">
+          <div className="relative bg-white p-4 md:p-8 rounded-lg shadow-lg w-[90%] md:w-[55%] md:h-[50vh] z-50 ">
             {isFormVisible && !isQuoteSubmitted && (
               <div>
                 <div className="flex justify-between items-center mb-4">
@@ -93,7 +93,7 @@ function Component1() {
                     ✖
                   </button>
                 </div>
-                <form className="space-y-4 p-5" onSubmit={handleSubmit}>
+                <form className="space-y-4 bg-white " onSubmit={handleSubmit}>
                   <div className="flex flex-wrap md:flex-nowrap gap-4">
                     <div className="w-full md:flex-1">
                       <label className="block font-semibold">Looking for</label>

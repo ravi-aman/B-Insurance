@@ -9,11 +9,11 @@ function Component6() {
             <img
               src="women.png"
               alt="family"
-              className="h-[40vh] md:h-[70vh] object-cover"
+              className="h-[40vh] md:h-[60vh] object-cover "
             />
           </div>
 
-          <div className="flex flex-col gap-5 text-sm md:text-lg w-full md:w-[50%]">
+          <div className="flex flex-col gap-5 text-sm md:text-lg w-full md:w-[45%]">
             <div className="text-xl md:text-3xl font-semibold mb-5 md:mb-3">
               How much do insurance cover costs?
             </div>

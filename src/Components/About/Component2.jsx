@@ -43,7 +43,7 @@ function Component2() {
         <button className="text-[1rem] font-semibold bg-[#24BBE3] text-white p-2 md:p-3 px-8 md:px-16 rounded-full">
           Get Protected Now!
         </button>
-        <div className="text-sm md:text-2xl mt-5 text-[#7F7F7F] text-center" id="ca">
+        <div className="text-sm md:text-3xl mt-10 text-[#7F7F7F] text-center" id="ca">
           Canada's fast-growing travel and life insurance broker
         </div>
       </div>

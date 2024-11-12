@@ -1,42 +1,40 @@
 'use client'
 
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 
 export default function Company() {
-    const [isHovered, setIsHovered] = useState(false)
     const logosRef = useRef(null)
 
     const logos = [
-        { name: 'Urban Crown', src: '/public/companyLogo1.png' },
-        { name: 'Urban Crown', src: '/public/companyLogo2.png' },
-        { name: 'Urban Crown', src: '/public/companyLogo3.png' },
-        { name: 'Urban Crown', src: '/public/companyLogo4.png' },
-        { name: 'Urban Crown', src: '/public/companyLogo5.png' },
+        { name: 'td', src: '/public/td.png' },
+        { name: 'company', src: '/public/companylogo9.png' },
+        { name: 'company', src: '/public/companyLogo6.svg' },
+        { name: 'sunlife', src: '/public/sunlife.png' },
+        { name: 'manulife', src: '/public/manulife.png' },
+        { name: 'rbc', src: '/public/rbc.svg' },
+        { name: 'rbc', src: '/public/companylogo8.png' },
+        { name: 'rbc', src: '/public/desjardins.svg' },
+        { name: 'rbc', src: '/public/companyLogo3.svg' },
     ]
 
     const allLogos = [...logos, ...logos]
 
     useEffect(() => {
         const context = gsap.context(() => {
-            const animation = gsap.to(logosRef.current, {
+            gsap.to(logosRef.current, {
                 xPercent: -50,
                 repeat: -1,
                 ease: 'linear',
                 duration: 30,
             })
-            if (isHovered) {
-                animation.pause()
-            } else {
-                animation.resume()
-            }
-        }, [isHovered])
+        })
 
         return () => context.revert()
-    }, [isHovered])
+    }, [])
 
     return (
-        <section className="w-full py-12 bg-background border-t border-gray-200">
+        <section className="w-full py-20 bg-background border-t border-gray-200 relative top-[-30px] bg-white">
             <div className="container flex flex-col md:flex-row items-center px-4 md:px-6 justify-between">
                 <div className="text-center md:text-left w-full md:w-1/2 space-y-4 md:px-[10%]">
                     <h2 className="text-3xl font-bold tracking-tighter ">
@@ -49,8 +47,6 @@ export default function Company() {
 
                 <div
                     className="logos mt-8 md:mt-0 md:ml-auto relative overflow-hidden bg-clouds w-full md:w-1/2"
-                    onMouseEnter={() => setIsHovered(true)}
-                    onMouseLeave={() => setIsHovered(false)}
                 >
                     <div
                         ref={logosRef}
@@ -62,7 +58,7 @@ export default function Company() {
                         {allLogos.map((logo, index) => (
                             <div
                                 key={index}
-                                className="flex items-center justify-center min-w-[120px] h-16 grayscale hover:grayscale-0 transition-all duration-200"
+                                className="flex items-center justify-center min-w-[120px] h-16 grayscale"
                             >
                                 <img
                                     src={logo.src}
@@ -87,7 +83,7 @@ export default function Company() {
           content: '';
           position: absolute;
           top: -50%;
-          left: -50%
+          left: -50%;
           width: 200%;
           height: 200%;
           background: radial-gradient(circle, rgba(240, 240, 255, 0.5) 20%, transparent 100%);
