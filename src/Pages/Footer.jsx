@@ -10,7 +10,7 @@ function Footer() {
   };
 
   return (
-    <footer className="bg-[#353535] text-white py-10 pt-20">
+    <footer className="bg-[#353535] text-white py-10 pt-20 px-5">
       <div className="max-w-8xl mx-auto flex flex-col sm:flex-row justify-between sm:justify-center gap-16 sm:gap-[35rem]">
         <div className="mb-16 sm:mb-0 sm:text-left">
           <div className="mb-6">
