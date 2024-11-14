@@ -159,13 +159,12 @@ function Header() {
                 <div
                   className={`cursor-pointer ${selectedHeading === item.name ? "font-semibold" : ""}`}
                   onClick={(e) => {
-                    // If the item has a submenu, toggle the dropdown without navigating
                     if (item.subMenu) {
                       headingClick(item.name, e);
-                      toggleDropdown(item.name.toLowerCase()); // Toggle dropdown
+                      toggleDropdown(item.name.toLowerCase());
                     } else {
-                      navigate(item.navPage); // Navigate normally
-                      headingClick(item.name, e); // Set selected heading and close dropdowns
+                      navigate(item.navPage); 
+                      headingClick(item.name, e);
                     }
                   }}
                 >
