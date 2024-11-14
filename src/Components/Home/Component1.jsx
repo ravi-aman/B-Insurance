@@ -43,20 +43,20 @@ function Component1() {
           className="absolute right-0 bottom-20 hidden md:block h-[50vh]"
         />
       </div>
-      <div className="w-full md:w-[55%] z-30 h-[50vh] p-5  md:p-10 shadow-xl rounded-2xl relative bg-white flex flex-col items-center gap-5 md:gap-10 ">
-        <div className="w-full grid grid-cols-2 gap-2 md:grid-cols-4 md:gap-5">
+      <div className="w-full md:w-[55%] z-30 h-[50vh] p-5  md:p-10 shadow-xl rounded-2xl relative bg-white flex flex-col items-center gap-5 md:gap-10  ">
+        <div className="w-full grid grid-cols-2 gap-2 md:grid-cols-4 md:gap-5 ">
           {["Life", "Travel", "Auto", "Commercial"].map((type) => (
             <div
               key={type}
               onClick={() => handleSelectInsurance(type)}
-              className={`bg-white h-28 w-full border-2 border-gray-200 rounded-lg p-3 flex flex-col cursor-pointer ${selectedInsurance === type ? "border-cyan-400" : ""
+              className={`bg-white h-28 w-full border-2 border-gray-200 rounded-lg p-2 flex flex-col cursor-pointer transition-colors duration-400 ease-in-out hover:bg-[#c3f2ff] ${selectedInsurance === type ? "border-cyan-400" : ""
                 }`}
             >
               <p className="font-semibold">{type}</p>
               <p>Insurance</p>
               <div className="self-end">
                 <img
-                  src={`/Home/${type}.png`}
+                  src={`/${type}.png`}
                   alt={type}
                   className="h-10 md:h-16"
                 />
@@ -66,10 +66,11 @@ function Component1() {
         </div>
         <div
           onClick={handleGetQuoteClick}
-          className="p-2 md:p-3 border-2 border-gray-300 inline font-bold cursor-pointer w-2/3 md:w-1/3 text-center rounded-full text-sm text-cyan-400"
+          className="p-2 md:p-3 border-2 border-gray-300 hover:border-white hover:bg-cyan-400 hover:text-white inline font-bold cursor-pointer w-2/3 md:w-1/3 text-center rounded-full text-sm text-cyan-400 transition-colors duration-300 ease-in-out"
         >
           GET A FREE QUOTE
         </div>
+
         <div className="text-sm md:text-2xl mx-5 text-[#7F7F7F] text-center" id="ca">
           Canada's fast-growing travel and life insurance broker
         </div>
@@ -79,7 +80,7 @@ function Component1() {
         <div className="fixed inset-0 z-50 flex items-center justify-center">
           <div className="absolute inset-0 bg-black opacity-50"></div>
 
-          <div className="relative bg-white p-4 md:p-8 rounded-lg shadow-lg w-[90%] md:w-[55%] md:h-[50vh] z-50 ">
+          <div className="absolute bg-white p-4 md:p-8 rounded-lg shadow-lg w-[90%] md:w-[55%] z-50 ">
             {isFormVisible && !isQuoteSubmitted && (
               <div>
                 <div className="flex justify-between items-center mb-4">
@@ -145,7 +146,7 @@ function Component1() {
                       />
                     </div>
                   </div>
-                  <button className="w-64 mx-auto bg-cyan-500 text-white py-3 rounded-full mt-4 block">
+                  <button className="w-64 mx-auto bg-cyan-500 hover:bg-cyan-400 text-white py-3 rounded-full mt-4 block transition-colors duration-300 ease-in-out font-semibold">
                     GET A FREE QUOTE
                   </button>
                   <p className="text-sm text-center text-gray-500 mt-4">
@@ -168,7 +169,7 @@ function Component1() {
                     ✖
                   </button>
                 </div>
-                <img src="/thx.png" alt="Thank You Image" className="w-20 h-28 mb-0" />
+                <img src="/thankyou.png" alt="Thank You Image" className="w-20 h-28 mb-0" />
                 <h2 className="text-lg md:text-2xl font-bold">Thank you!</h2>
                 <p className="text-center mt-0">
                   We’ve sent your personalized quote to your inbox.

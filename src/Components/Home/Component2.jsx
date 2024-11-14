@@ -2,7 +2,7 @@ import React from "react";
 
 function Component2() {
   return (
-    <div className="bg-white flex flex-col justify-center items-center p-5  md:px-6 pt-10 md:pt-36 gap-5 pb-20">
+    <div className="bg-white flex flex-col justify-center items-center p-5  md:px-6 gap-5 pb-20">
       <div>
         <div className="text-center mb-2 text-[18px] md:text-[2.1rem] font-bold">
           <p className="inline md:block text-center text-[#073141]">

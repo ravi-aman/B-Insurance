@@ -4,15 +4,15 @@ function Info() {
   return (
     <div className="flex flex-col gap-5 text-center p-5 sm:p-5 md:p-2 md:text-start pb-20 items-start">
       <div className="flex flex-col gap-2 md:gap-5">
-        <div className="text-2xl text-start sm:text-2xl md:text-4xl font-medium">
-        Get comprehensive <span className="font-semibold">warehouse</span> {" "}
-        <div className="inline md:block text-lg sm:text-2xl md:text-4xl font-normal">
-        and <span className="font-semibold text-2xl">storage insurance .</span>
-        </div>
+        <div className="text-2xl text-start sm:text-2xl md:text-4xl">
+          Get comprehensive <span className="font-bold text-4xl">warehouse</span> {" "}
+          <div className="inline md:block text-lg sm:text-2xl md:text-4xl font-normal">
+            and <span className="font-bold text-4xl">storage insurance .</span>
+          </div>
         </div>
       </div>
       <div className="text-sm sm:text-base text-start md:text-lg">
-      Get comprehensive warehouse and storage insurance to protect 
+        Get comprehensive warehouse and storage insurance to protect
         <div className="inline md:block">your business and assets.</div>
       </div>
       <div className="text-sm sm:text-base md:text-lg text-start p-2 flex flex-col md:flex-row md:mr-44 mr-10">

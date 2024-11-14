@@ -32,32 +32,27 @@ function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <a href="/careers" className="hover:underline">
                   Careers
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <a href="/contact" className="hover:underline">
                   Contact us
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <a href="/lifeInsurance" className="hover:underline">
                   Insurance
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:underline">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline">
+                <a href="/faq" className="hover:underline">
                   FAQs
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <a href="/about" className="hover:underline">
                   About
                 </a>
               </li>
@@ -87,17 +82,17 @@ function Footer() {
         </div>
       </div>
       <div className="flex">
-      <div className="border-t w-full sm:w-[70%] m-auto border-gray-700 mt-12 pt-8 text-center sm:text-start text-base text-white">
-        Copyright © 2024 Inc. All rights reserved.
-      </div>
+        <div className="border-t w-full sm:w-[70%] m-auto border-gray-700 mt-12 pt-8 text-center sm:text-start text-base text-white">
+          Copyright © 2024 Inc. All rights reserved.
+        </div>
 
-      <div className="text-center mt-6">
-        <button
-          onClick={scrollToTop}
-        >
-          <img src="/top.png" alt="top" />
-        </button>
-      </div>
+        <div className="text-center mt-6">
+          <button
+            onClick={scrollToTop}
+          >
+            <img src="/top.png" alt="top" />
+          </button>
+        </div>
       </div>
     </footer>
   );

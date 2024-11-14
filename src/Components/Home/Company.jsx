@@ -34,7 +34,7 @@ export default function Company() {
     }, [])
 
     return (
-        <section className="w-full py-20 bg-background border-t border-gray-200 relative top-[-30px] bg-white">
+        <section className="w-full py-20 bg-background border border-gray-200 relative top-[-30px] bg-white">
             <div className="container flex flex-col md:flex-row items-center px-4 md:px-6 justify-between">
                 <div className="text-center md:text-left w-full md:w-1/2 space-y-4 md:px-[10%]">
                     <h2 className="text-3xl font-bold tracking-tighter ">
