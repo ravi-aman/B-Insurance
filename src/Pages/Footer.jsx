@@ -21,7 +21,6 @@ function Footer() {
           <p className="mt-6 text-lg font-medium">999-888-0000</p>
           <p className="text-lg font-medium">care@binsure.ca</p>
         </div>
-
         <div className="flex sm:flex-row sm:text-left justify-between">
           <div className="flex flex-col sm:mr-20 mb-8 sm:mb-0">
             <h4 className="text-xl font-semibold mb-6">Quick Links</h4>

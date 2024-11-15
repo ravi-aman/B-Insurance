@@ -83,9 +83,9 @@ function Component1() {
         )}
 
         {isFormVisible && !isQuoteSubmitted && (
-          <div>
-            <div className="flex justify-between items-center mb-4">
-              <h2 className="text-lg md:text-xl font-semibold">
+          <div className="w-full">
+            <div className="flex justify-between mb-4">
+              <h2 className="text-lg md:text-xl font-bold">
                 Help us with a few details
               </h2>
               <button
