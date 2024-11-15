@@ -14,19 +14,18 @@ function Header() {
 
   const dropdownRef = useRef(null);
   const headerRef = useRef(null);
-  const menuRef = useRef(null);  // Ref for mobile menu div
+  const menuRef = useRef(null); 
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Close dropdowns on outside click
     const handleClickOutside = (event) => {
       if (
-        headerRef.current && 
+        headerRef.current &&
         !headerRef.current.contains(event.target) &&
-        menuRef.current && 
+        menuRef.current &&
         !menuRef.current.contains(event.target)
       ) {
-        setIsOpen(false);  // Close mobile menu if clicked outside
+        setIsOpen(false);  
         closeAllDropdowns();
       }
     };
@@ -98,7 +97,7 @@ function Header() {
     <header className="bg-white shadow-sm" ref={headerRef}>
       <nav className="flex justify-between md:justify-center items-center p-2 w-full">
         <div className="md:w-1/3 flex justify-between items-center w-full">
-          <img src="logo.png" alt="logo" className="h-10 md:h-[3rem]" />
+          <img src="logo.png" alt="logo" className="h-12 md:h-[3rem] pl-[100px]" />
           <img
             src="hamburger.png"
             alt="menu"
@@ -108,10 +107,9 @@ function Header() {
         </div>
 
         <div
-          ref={menuRef}  // Attach ref to the mobile menu div
-          className={`fixed top-0 right-0 h-full w-[70%] bg-white shadow-lg z-40 p-5 transition-transform duration-300 ${
-            isOpen ? "translate-x-0" : "translate-x-full"
-          } md:hidden`}
+          ref={menuRef}  
+          className={`fixed top-0 right-0 h-full w-[70%] bg-white shadow-lg z-40 p-5 transition-transform duration-300 ${isOpen ? "translate-x-0" : "translate-x-full"
+            } md:hidden`}
         >
           <ul className="flex flex-col gap-6">
             {navItems.map((item) => (
@@ -158,6 +156,9 @@ function Header() {
               }}
             >
               Get a Quote
+            </li>
+            <li>
+              <img src="find.png" alt="search" className="h-10" />
             </li>
           </ul>
         </div>

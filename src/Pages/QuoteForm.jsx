@@ -69,7 +69,7 @@ function QuoteForm({ onClose }) {
               </p>
             </form>
           </div>
-          <div className="hidden md:block relative right-[-5px]">
+          <div className="hidden md:block relative right-[-5px] ">
             <img src="health.png" alt="health" className="h-[70vh] object-cover" />
           </div>
           <div className="absolute right-[-2%] top-[-2%]">
