@@ -73,11 +73,7 @@ export default function Company() {
                 </div>
             </div>
             <style>{`
-        .bg-clouds {
-          background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 0%, rgba(230, 230, 250, 0.3) 40%, transparent 70%);
-          position: relative;
-          z-index: 1;
-        }
+        
 
         .bg-clouds::before {
           content: '';
