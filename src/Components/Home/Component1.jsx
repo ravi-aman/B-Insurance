@@ -76,7 +76,7 @@ function Component1() {
     }
 
     try {
-      const response = await fetch('https://your-vercel-deployment-url/api/submit', {
+      const response = await fetch('https://b-insurance.vercel.app/api/submit', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -88,10 +88,10 @@ function Component1() {
         setIsQuoteSubmitted(true);
         alert("Form submitted successfully!");
       } else {
-        alert("Form submission failed:"+result.message);
+        alert("Form submission failed:" + result.message);
       }
     } catch (error) {
-      alert("Form submission error:"+ error);
+      alert("Form submission error:" + error);
     }
   };
 
