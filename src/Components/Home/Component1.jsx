@@ -82,17 +82,23 @@ function Component1() {
         body: JSON.stringify(formData),
       });
 
-      const result = await response.json();
+      // Log the raw response text
+      const responseText = await response.text();
+      console.log("Raw response:", responseText);
+
+      // Attempt to parse the response only if it's valid JSON
+      const result = JSON.parse(responseText);
 
       if (response.ok && result.success) {
         setIsQuoteSubmitted(true);
         alert("Form submitted successfully!");
       } else {
-        alert("Form submission failed:" + result.message);
+        alert("Form submission failed: " + result.message);
       }
     } catch (error) {
-      alert("Form submission error:" + error);
+      alert("Form submission error: " + error);
     }
+
   };
 
   // .........................
