@@ -1,30 +1,98 @@
 import React, { useState } from "react";
+import { Timestamp } from "firebase/firestore";
+import { toast } from "react-toastify"; // Import toast library
+import "react-toastify/dist/ReactToastify.css"; // Import toast styles
 
 function Component1() {
   const [selectedInsurance, setSelectedInsurance] = useState(null);
   const [isQuoteSubmitted, setIsQuoteSubmitted] = useState(false);
   const [isFormVisible, setIsFormVisible] = useState(false);
 
+  // Handler to select insurance type
   const handleSelectInsurance = (type) => {
     setSelectedInsurance(type);
     setIsFormVisible(true);
   };
 
+  // Handler to reset form state
   const handleCloseForm = () => {
     setSelectedInsurance(null);
     setIsQuoteSubmitted(false);
     setIsFormVisible(false);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsQuoteSubmitted(true);
-  };
-
+  // Handler for the "Get Quote" button
   const handleGetQuoteClick = () => {
     setIsFormVisible(true);
   };
 
+  // Validation function
+  const validateFormData = (formData) => {
+    if (!formData.lookingFor) return "Please select the insurance type.";
+    if (!["Life", "Travel", "Auto", "Commercial"].includes(formData.lookingFor))
+      return "Invalid insurance type selected.";
+    if (!formData.planningToBuy) return "Please select when you plan to buy.";
+    if (!formData.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email))
+      return "Please enter a valid email address.";
+    if (!formData.name || formData.name.length < 2)
+      return "Please enter a valid name (at least 2 characters).";
+    if (
+      !formData.contactNumber ||
+      !/^\d{10}$/.test(formData.contactNumber)
+    )
+      return "Please enter a valid 10-digit contact number.";
+    if (!formData.countryCode) return "Please select a country code.";
+    return null;
+  };
+
+  // Form submission handler
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const formData = {
+      lookingFor: (event.currentTarget[0]).value,
+      planningToBuy: (event.currentTarget[1]).value,
+      email: (event.currentTarget[2]).value,
+      name: (event.currentTarget[3]).value,
+      contactNumber: (event.currentTarget[5]).value,
+      countryCode: (event.currentTarget[4]).value,
+      timestamp: Timestamp.now(),
+      readableTimestamp: new Date().toLocaleString(),
+    };
+
+    const validationError = validateFormData(formData);
+    if (validationError) {
+      console.error("Validation Error:", validationError);
+      return;
+    } else {
+      console.log("Form Data:", formData);
+      setSelectedInsurance(null);
+      setIsQuoteSubmitted(false);
+      setIsFormVisible(false);
+
+    }
+
+    try {
+      const response = await fetch("http://localhost:5137/submit-form", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        setIsQuoteSubmitted(true);
+        console.log("Form submitted successfully!");
+      } else {
+        console.error("Form submission failed:", result.message);
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+    }
+  };
+
+  // .........................
   return (
     <div className="text-[1rem] md:text-[0.8rem] flex flex-col justify-center items-center relative">
       <div className="text-2xl md:text-4xl text-center mt-20 md:mt-30 mb-10 md:mb-20">
@@ -32,17 +100,17 @@ function Component1() {
         <p>Top Insurers and Save BIG</p>
       </div>
       <>
-            <img
-              src="/Home/img1.png"
-              alt="img"
-              className="absolute left-0 bottom-80 md:bottom-20 h-32 md:h-[50vh]"
-            />
-            <img
-              src="/Home/img3.png"
-              alt="img"
-              className="absolute right-0 bottom-20 hidden md:block h-[50vh]"
-            />
-          </>
+        <img
+          src="/Home/img1.png"
+          alt="img"
+          className="absolute left-0 bottom-80 md:bottom-20 h-32 md:h-[50vh]"
+        />
+        <img
+          src="/Home/img3.png"
+          alt="img"
+          className="absolute right-0 bottom-20 hidden md:block h-[50vh]"
+        />
+      </>
       <div className="optionContainer z-20">
         {!isFormVisible}
       </div>
@@ -153,7 +221,7 @@ function Component1() {
                   </div>
                 </div>
               </div>
-              <button className="w-64 mx-auto bg-cyan-500 hover:bg-cyan-400 text-white py-3 rounded-full mt-4 block transition-colors duration-300 ease-in-out font-semibold">
+              <button type="submit" className="w-64 mx-auto bg-cyan-500 hover:bg-cyan-400 text-white py-3 rounded-full mt-4 block transition-colors duration-300 ease-in-out font-semibold">
                 GET A FREE QUOTE
               </button>
               <p className="text-sm text-center text-gray-500 mt-4">

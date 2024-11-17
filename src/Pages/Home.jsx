@@ -9,6 +9,7 @@ import Component9 from '../Components/Home/Component9'
 import Component7 from '../Components/Home/Component7'
 import Component1 from '../Components/Home/Component1'
 import Company from '../Components/Home/Company'
+import Test from '../Components/Home/test'
 
 function Home() {
     return (
