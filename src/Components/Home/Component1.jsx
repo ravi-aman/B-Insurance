@@ -76,7 +76,7 @@ function Component1() {
     }
 
     try {
-      const response = await fetch("http://localhost:5137/submit-form", {
+      const response = await fetch('/api/submit', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

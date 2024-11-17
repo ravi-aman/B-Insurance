@@ -1,7 +1,7 @@
 {
-  "name": "lifeinsurance",
+  "name": "binsure",
   "version": "1.0.0",
-  "main": "server.cjs",
+  "main": "submit.js",
   "private": true,
   "type": "module",
   "scripts": {
