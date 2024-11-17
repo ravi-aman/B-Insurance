@@ -21,7 +21,7 @@ function Component1() {
     setIsFormVisible(false);
   };
 
-  // Handler for the "Get Quote" button
+  // Handler get quote buttn
   const handleGetQuoteClick = () => {
     setIsFormVisible(true);
   };
@@ -36,11 +36,14 @@ function Component1() {
       return "Please enter a valid email address.";
     if (!formData.name || formData.name.length < 2)
       return "Please enter a valid name (at least 2 characters).";
+    if (!formData.contactNumber || !/^\d{10}$/.test(formData.contactNumber))
+      return "Please enter a valid 10-digit contact number.";
     if (
       !formData.contactNumber ||
       !/^\d{10}$/.test(formData.contactNumber)
     )
       return "Please enter a valid 10-digit contact number.";
+
     if (!formData.countryCode) return "Please select a country code.";
     return null;
   };
@@ -62,10 +65,10 @@ function Component1() {
 
     const validationError = validateFormData(formData);
     if (validationError) {
-      console.error("Validation Error:", validationError);
+      alert("Validation Error: " + validationError);
       return;
     } else {
-      console.log("Form Data:", formData);
+      // console.log("Form Data:", formData);
       setSelectedInsurance(null);
       setIsQuoteSubmitted(false);
       setIsFormVisible(false);
@@ -83,12 +86,12 @@ function Component1() {
 
       if (response.ok && result.success) {
         setIsQuoteSubmitted(true);
-        console.log("Form submitted successfully!");
+        alert("Form submitted successfully!");
       } else {
-        console.error("Form submission failed:", result.message);
+        alert("Form submission failed:", result.message);
       }
     } catch (error) {
-      console.error("Form submission error:", error);
+      alert("Form submission error:", error);
     }
   };
 

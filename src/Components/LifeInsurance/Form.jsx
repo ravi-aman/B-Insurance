@@ -9,7 +9,7 @@ function Form() {
   const handleCloseForm = () => {
     setSelectedInsurance(null);
     setIsQuoteSubmitted(false);
-    setIsFormVisible(false);
+    // setIsFormVisible(false);
   };
 
   // Validation function
@@ -39,7 +39,7 @@ function Form() {
 
     const validationError = validateFormData(formData);
     if (validationError) {
-      alert(validationError);
+      alert(validationError); // Alert for validation error
       return;
     }
 
@@ -54,14 +54,18 @@ function Form() {
 
       if (response.ok && result.success) {
         setIsQuoteSubmitted(true);
+        alert("Form submitted successfully!"); 
         console.log("Form submitted successfully!");
       } else {
+        alert(`Submission Error: ${result.message}`);
         console.error("Form submission failed:", result.message);
       }
     } catch (error) {
+      alert(`Submission Error: ${error.message}`);
       console.error("Form submission error:", error);
     }
   };
+
 
   return (
     <div>
