@@ -1,8 +1,8 @@
 import React from 'react'
-import Component1 from '../Components/Contact/Component1'
-import Component2 from '../Components/Contact/Component2'
-import Component3 from '../Components/Contact/Component3'
-import Coverage from '../Components/Contact/Coverage'
+import Component1 from '@/Components/Contact/Component1'
+import Component2 from '@/Components/Contact/Component2'
+import Component3 from '@/Components/Contact/Component3'
+import Coverage from '@/Components/Contact/Coverage'
 
 function Contact() {
     return (

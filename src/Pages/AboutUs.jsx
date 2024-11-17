@@ -1,11 +1,11 @@
-import React from 'react'
-import Component1 from '../Components/About/Component1'
-import Component2 from '../Components/About/Component2'
-import Component3 from '../Components/About/Component3'
-import Component4 from '../Components/About/Component4'
-import Component5 from '../Components/About/Component5'
-import Component9 from '../Components/LifeInsurance/component9'
-import Company from '../Components/Home/Company'
+// import React from 'react'
+import Component1 from '@/Components/About/Component1'
+import Component2 from '@/Components/About/Component2'
+import Component3 from '@/Components/About/Component3'
+import Component4 from '@/Components/About/Component4'
+import Component5 from '@/Components/About/Component5'
+import Component9 from '@/Components/LifeInsurance/component9'
+import Company from '@/Components/Home/Company'
 
 function AboutUs() {
     return (

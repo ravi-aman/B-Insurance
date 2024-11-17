@@ -1,16 +1,16 @@
-import React from "react";
-import Form from "../Components/LifeInsurance/Form";
-import Info from "../Components/LifeInsurance/Info";
-import Component1 from "../Components/LifeInsurance/Component1";
-import Component8 from "../Components/LifeInsurance/Component8";
-import Component9 from "../Components/LifeInsurance/component9";
-import Component2 from "../Components/LifeInsurance/Component2";
-import Customer from "../Components/LifeInsurance/Customer";
-import Components4 from "../Components/LifeInsurance/Components4";
-import Component5 from "../Components/LifeInsurance/Component5";
-import Component6 from "../Components/LifeInsurance/Component6";
-import Component7 from "../Components/LifeInsurance/Component7";
-import Coverage from "../Components/LifeInsurance/Coverage";
+// import React from "react";
+import Form from "@/Components/LifeInsurance/Form";
+import Info from "@/Components/LifeInsurance/Info";
+import Component1 from "@/Components/LifeInsurance/Component1";
+import Component8 from "@/Components/LifeInsurance/Component8";
+import Component9 from "@/Components/LifeInsurance/component9";
+import Component2 from "@/Components/LifeInsurance/Component2";
+import Customer from "@/Components/LifeInsurance/Customer";
+import Components4 from "@/Components/LifeInsurance/Components4";
+import Component5 from "@/Components/LifeInsurance/Component5";
+import Component6 from "@/Components/LifeInsurance/Component6";
+import Component7 from "@/Components/LifeInsurance/Component7";
+import Coverage from "@/Components/LifeInsurance/Coverage";
 
 function LifeInsurance() {
   return (

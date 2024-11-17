@@ -1,5 +1,5 @@
-import React from 'react';
-import Component9 from '../Components/LifeInsurance/component9';
+// import React from 'react';
+import Component9 from '@/Components/LifeInsurance/component9';
 
 function BoilerPlate() {
     return (

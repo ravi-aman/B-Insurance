@@ -1,7 +1,7 @@
 import React from 'react'
-import Component1 from '../Components/Faq/Component1'
-import Component2 from '../Components/Faq/Component2'
-import Coverage from '../Components/Faq/Coverage'
+import Component1 from '@/Components/Faq/Component1'
+import Component2 from '@/Components/Faq/Component2'
+import Coverage from '@/Components/Faq/Coverage'
 
 function Faq() {
     return (

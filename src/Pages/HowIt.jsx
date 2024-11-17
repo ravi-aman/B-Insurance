@@ -1,8 +1,8 @@
-import React from 'react'
-import Component3 from '../Components/HowIt/Component3'
-import Component9 from '../Components/HowIt/Component9'
-import Component2 from '../Components/HowIt/Component2'
-import Component1 from '../Components/HowIt/Component1'
+// import React from 'react'
+import Component3 from '@/Components/HowIt/Component3'
+import Component9 from '@/Components/HowIt/Component9'
+import Component2 from '@/Components/HowIt/Component2'
+import Component1 from '@/Components/HowIt/Component1'
 
 function HowIt() {
     return (
