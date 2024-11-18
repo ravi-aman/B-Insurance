@@ -2,12 +2,17 @@ import React, { useState } from "react";
 import { Timestamp } from "firebase/firestore";
 import { toast } from "react-toastify"; // Import toast library
 import "react-toastify/dist/ReactToastify.css"; // Import toast styles
+import dotenv from 'dotenv';
+dotenv.config();
 
 function Component1() {
   const [selectedInsurance, setSelectedInsurance] = useState(null);
   const [isQuoteSubmitted, setIsQuoteSubmitted] = useState(false);
   const [isFormVisible, setIsFormVisible] = useState(false);
 
+  // url configuration
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+  const SUBMIT_FORM_ENDPOINT = process.env.REACT_APP_SUBMIT_FORM_ENDPOINT;
   // Handler to select insurance type
   const handleSelectInsurance = (type) => {
     setSelectedInsurance(type);
@@ -76,29 +81,22 @@ function Component1() {
     }
 
     try {
-      const response = await fetch('https://b-insurance.vercel.app/api/submit', {
+      const response = await fetch(`${API_BASE_URL}${SUBMIT_FORM_ENDPOINT}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-
-      // Log the raw response text
-      const responseText = await response.text();
-      console.log("Raw response:", responseText);
-
-      // Attempt to parse the response only if it's valid JSON
-      const result = JSON.parse(responseText);
+      const result = await response.json();
 
       if (response.ok && result.success) {
         setIsQuoteSubmitted(true);
         alert("Form submitted successfully!");
       } else {
-        alert("Form submission failed: " + result.message);
+        alert("Form submission failed:", result.message);
       }
     } catch (error) {
-      alert("Form submission error: " + error);
+      alert("Form submission error:", error);
     }
-
   };
 
   // .........................
