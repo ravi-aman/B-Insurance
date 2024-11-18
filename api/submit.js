@@ -34,7 +34,7 @@ const PORT = process.env.PORT || 5137;
 app.use(cors());
 app.use(express.json());
 
-app.post(process.env.SUBMIT_FORM_ENDPOINT, async (req, res) => {
+app.post(process.env.VITE_SUBMIT_FORM_ENDPOINT, async (req, res) => {
     const formData = req.body;
     console.log('Form Data Received:', formData);
 

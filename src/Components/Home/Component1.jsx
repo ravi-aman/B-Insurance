@@ -2,23 +2,24 @@ import React, { useState } from "react";
 import { Timestamp } from "firebase/firestore";
 import { toast } from "react-toastify"; // Import toast library
 import "react-toastify/dist/ReactToastify.css"; // Import toast styles
-import dotenv from 'dotenv';
-dotenv.config();
 
 function Component1() {
   const [selectedInsurance, setSelectedInsurance] = useState(null);
   const [isQuoteSubmitted, setIsQuoteSubmitted] = useState(false);
   const [isFormVisible, setIsFormVisible] = useState(false);
 
-  // url configuration
-  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
-  const SUBMIT_FORM_ENDPOINT = process.env.REACT_APP_SUBMIT_FORM_ENDPOINT;
+  // Access environment variables
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+  const SUBMIT_FORM_ENDPOINT = import.meta.env.VITE_SUBMIT_FORM_ENDPOINT;
+
+  console.log("API_BASE_URL", API_BASE_URL);
+  console.log("SUBMIT_FORM_ENDPOINT", SUBMIT_FORM_ENDPOINT);
+
   // Handler to select insurance type
   const handleSelectInsurance = (type) => {
     setSelectedInsurance(type);
     setIsFormVisible(true);
   };
-
   // Handler to reset form state
   const handleCloseForm = () => {
     setSelectedInsurance(null);
