@@ -25,7 +25,16 @@ const db = getFirestore(firebaseApp);
 const app = express();
 const PORT = process.env.PORT || 5137;
 
-app.use(cors());
+
+console.log('Server running at:', process.env.SUBMIT_FORM_ENDPOINT);
+
+
+app.use(cors({
+    origin: 'https://your-frontend-url.vercel.app', // Replace with your frontend's Vercel URL
+    methods: ['GET', 'POST'], // Specify allowed methods if needed
+    allowedHeaders: ['Content-Type', 'Authorization'], // Specify allowed headers
+}));
+
 app.use(express.json());
 
 app.post(process.env.SUBMIT_FORM_ENDPOINT, async (req, res) => {
