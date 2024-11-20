@@ -16,12 +16,6 @@ const firebaseConfig = {
     appId: process.env.FIREBASE_APP_ID,
     measurementId: process.env.FIREBASE_MEASUREMENT_ID,
 };
-
-
-
-
-
-//firebase app
 const firebaseApp = initializeApp(firebaseConfig);
 const db = getFirestore(firebaseApp);
 
@@ -39,7 +33,7 @@ app.post(process.env.VITE_SUBMIT_FORM_ENDPOINT, async (req, res) => {
         const docRef = await addDoc(collection(db, 'formData'), formData);
         console.log("Data stored successfully in Firestore, Doc ID:", docRef.id);
 
-        //email to use
+        //email to user ...............................................
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
@@ -73,7 +67,7 @@ app.post(process.env.VITE_SUBMIT_FORM_ENDPOINT, async (req, res) => {
                 <p style="font-size: 16px;">Our team is reviewing your information to provide the best possible insurance options. You can expect a detailed quote in your inbox shortly.</p>
                 <p style="font-size: 16px;">In the meantime, feel free to explore our website to learn more about our services and how we’re changing insurance for good.</p>
                 <div style="text-align: center; margin: 20px 0;">
-                    <a href="https://binsure.ca" style="text-decoration: none; color: white; background-color: #4CAF50; padding: 10px 20px; border-radius: 5px; font-size: 16px;">Visit Our Website</a>
+                    <a href="https://github.com/ravi-aman" style="text-decoration: none; color: white; background-color: #4CAF50; padding: 10px 20px; border-radius: 5px; font-size: 16px;">Visit Our Website</a>
                 </div>
                 <hr style="border: none; border-top: 1px solid #eaeaea; margin: 20px 0;">
                 <h4 style="color: #444;">About B-Insure</h4>
@@ -92,7 +86,7 @@ app.post(process.env.VITE_SUBMIT_FORM_ENDPOINT, async (req, res) => {
         const sendemail = await transporter.sendMail(userMailOptions);
         console.log('Email sent successfully to user : ', formData.email);
 
-        // send about new user to the teem email
+        // send about new user regester to the teem email
         // Email to the team
         const teamMailOptions = {
             from: process.env.SENDER_EMAIL_USER,

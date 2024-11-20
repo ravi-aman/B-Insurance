@@ -5,14 +5,19 @@ function Form() {
   const [isQuoteSubmitted, setIsQuoteSubmitted] = useState(false);
   const [isFormVisible, setIsFormVisible] = useState(true);
 
-  // Handler to reset form state
+
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+  const SUBMIT_FORM_ENDPOINT = import.meta.env.VITE_SUBMIT_FORM_ENDPOINT;
+
+  console.log("API_BASE_URL", API_BASE_URL);
+  console.log("SUBMIT_FORM_ENDPOINT", SUBMIT_FORM_ENDPOINT);
+
   const handleCloseForm = () => {
     setSelectedInsurance(null);
     setIsQuoteSubmitted(false);
     // setIsFormVisible(false);
   };
 
-  // Validation function
   const validateFormData = (formData) => {
     if (!formData.planningToBuy) return "Please select when you plan to buy.";
     if (!formData.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email))
@@ -25,7 +30,7 @@ function Form() {
     return null;
   };
 
-  // Form submission handler
+  // Form submission he
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -39,12 +44,12 @@ function Form() {
 
     const validationError = validateFormData(formData);
     if (validationError) {
-      alert(validationError); // Alert for validation error
+      alert(validationError);
       return;
     }
 
     try {
-      const response = await fetch("http://localhost:5137/submit-form", {
+      const response = await fetch(`${API_BASE_URL}${SUBMIT_FORM_ENDPOINT}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -54,7 +59,7 @@ function Form() {
 
       if (response.ok && result.success) {
         setIsQuoteSubmitted(true);
-        alert("Form submitted successfully!"); 
+        alert("Form submitted successfully!");
         console.log("Form submitted successfully!");
       } else {
         alert(`Submission Error: ${result.message}`);

@@ -1,38 +1,33 @@
 import React, { useState } from "react";
 import { Timestamp } from "firebase/firestore";
-import { toast } from "react-toastify"; // Import toast library
-import "react-toastify/dist/ReactToastify.css"; // Import toast styles
+import { toast } from "react-toastify"; 
+import "react-toastify/dist/ReactToastify.css";
 
 function Component1() {
   const [selectedInsurance, setSelectedInsurance] = useState(null);
   const [isQuoteSubmitted, setIsQuoteSubmitted] = useState(false);
   const [isFormVisible, setIsFormVisible] = useState(false);
 
-  // Access environment variables
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const SUBMIT_FORM_ENDPOINT = import.meta.env.VITE_SUBMIT_FORM_ENDPOINT;
 
   console.log("API_BASE_URL", API_BASE_URL);
   console.log("SUBMIT_FORM_ENDPOINT", SUBMIT_FORM_ENDPOINT);
 
-  // Handler to select insurance type
   const handleSelectInsurance = (type) => {
     setSelectedInsurance(type);
     setIsFormVisible(true);
   };
-  // Handler to reset form state
   const handleCloseForm = () => {
     setSelectedInsurance(null);
     setIsQuoteSubmitted(false);
     setIsFormVisible(false);
   };
 
-  // Handler get quote buttn
   const handleGetQuoteClick = () => {
     setIsFormVisible(true);
   };
 
-  // Validation function
   const validateFormData = (formData) => {
     if (!formData.lookingFor) return "Please select the insurance type.";
     if (!["Life", "Travel", "Auto", "Commercial"].includes(formData.lookingFor))
@@ -54,7 +49,7 @@ function Component1() {
     return null;
   };
 
-  // Form submission handler
+  // Form submission he
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -93,10 +88,10 @@ function Component1() {
         setIsQuoteSubmitted(true);
         alert("Form submitted successfully!");
       } else {
-        alert("Form submission failed:", result.message);
+        alert("Form submission failed:"+ result.message);
       }
     } catch (error) {
-      alert("Form submission error:", error);
+      alert("Form submission error:"+error);
     }
   };
 
