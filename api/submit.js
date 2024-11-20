@@ -34,6 +34,8 @@ const PORT = process.env.PORT || 5137;
 app.use(cors());
 app.use(express.json());
 
+app.use(cors({ origin: 'https://b-insurance.vercel.app', methods: ['POST'], credentials: true }));
+
 
 app.get(process.env.VITE_SUBMIT_FORM_ENDPOINT, (req, res) => {
     res.status(405).json({ success: false, message: 'Use POST method for this endpoint.' });
