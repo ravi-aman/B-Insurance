@@ -194,6 +194,6 @@ app.post(process.env.VITE_SUBMIT_FORM_ENDPOINT, async (req, res) => {
 });
 -
     app.listen(PORT, () => {
-        console.log(`Server running at http://localhost:${PORT}`);
+        console.log(`Server running at ${process.env.VITE_API_BASE_URL}${process.env.VITE_SUBMIT_FORM_ENDPOINT}`);
     });
 

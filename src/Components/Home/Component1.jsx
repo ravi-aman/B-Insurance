@@ -77,7 +77,7 @@ function Component1() {
     }
 
     try {
-      const response = await fetch(`${API_BASE_URL}${SUBMIT_FORM_ENDPOINT}`, {
+      const response = await fetch(`${SUBMIT_FORM_ENDPOINT}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
