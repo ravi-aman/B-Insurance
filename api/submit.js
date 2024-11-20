@@ -31,11 +31,11 @@ app.use(express.json());
 app.post(process.env.SUBMIT_FORM_ENDPOINT, async (req, res) => {
     const formData = req.body;
     console.log('Form Data Received:', formData);
+    res.json({ success: true, message: "Form submitted successfully!" });
 
     try {
         const docRef = await addDoc(collection(db, 'formData'), formData);
         console.log("Data stored successfully in Firestore, Doc ID:", docRef.id);
-
         //email to user ...............................................
         const transporter = nodemailer.createTransport({
             service: 'gmail',
