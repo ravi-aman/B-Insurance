@@ -81,7 +81,7 @@ function QuoteForm({ onClose }) {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
       {!submitted ? (
-        <div className="bg-white h-[70vh] text-gray-600 rounded-3xl shadow-lg max-w-2xl w-full flex relative">
+        <div className="bg-white h-[70vh] text-gray-600 rounded-3xl shadow-lg max-w-2xl w-full flex relative mx-2">
           <div className="p-10 md:w-[55%]">
             <form className="space-y-4" onSubmit={handleSubmit}>
               <div className="flex flex-col">
