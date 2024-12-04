@@ -98,7 +98,7 @@ function Component1() {
   // .........................
   return (
     <div className="text-[1rem] md:text-[0.8rem] flex flex-col justify-center items-center relative">
-      <div className="text-2xl md:text-5xl text-center mt-20 md:mt-30 mb-10 md:mb-20 mx-2">
+      <div className="text-2xl md:text-5xl text-center mt-20 md:mt-30 mb-10 md:mb-20 mx-1">
         <p className="font-semibold inline text-gray-800">Compare & Buy</p> from Canada's
         <p>Top Insurers and Save BIG</p>
       </div>
