@@ -7,7 +7,7 @@ export default function Company() {
     const logosRef = useRef(null)
 
     const logos = [
-        { name: 'td', src: '/public/td.png' },
+        { name: 'td', src: '/td.png' },
         { name: 'company', src: '/companylogo9.png' },
         { name: 'company', src: '/image 12.png' },
         { name: 'sunlife', src: '/sunlife.png' },
