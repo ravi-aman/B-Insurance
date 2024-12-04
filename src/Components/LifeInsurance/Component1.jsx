@@ -12,7 +12,7 @@ function Component1() {
         <div className="w-full md:w-auto">
           <img src="family.png" alt="family" className="h-[50vh] md:h-[76.5vh] pl-0 md:pl-20" />
         </div>
-        <div className="w-full md:w-[43%] flex flex-col gap-5 md:gap-10 text-[0.8rem] md:text-[0.9rem] font-normal text-black px-5">
+        <div className="w-full md:w-[43%] flex flex-col gap-5 md:gap-10 text-[0.8rem] md:text-[0.9rem] font-normal text-black px-7">
           <div className="text-xl md:text-[2rem] font-bold text-left md:text-left text-[#121D2F]">
             Insurance for Life and terms
           </div>
