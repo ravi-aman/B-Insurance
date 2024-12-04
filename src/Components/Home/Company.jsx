@@ -8,14 +8,14 @@ export default function Company() {
 
     const logos = [
         { name: 'td', src: '/public/td.png' },
-        { name: 'company', src: '/public/companylogo9.png' },
-        { name: 'company', src: '/public/image 12.png' },
-        { name: 'sunlife', src: '/public/sunlife.png' },
-        { name: 'rbc', src: '/public/rbc.svg' },
-        { name: 'rbc', src: '/public/companylogo8.png' },
-        { name: 'rbc', src: '/public/image 15.png' },
-        { name: 'rbc', src: '/public/companyLogo3.svg' },
-        { name: 'manulife', src: '/public/image 13.png' },
+        { name: 'company', src: '/companylogo9.png' },
+        { name: 'company', src: '/image 12.png' },
+        { name: 'sunlife', src: '/sunlife.png' },
+        { name: 'rbc', src: '/rbc.svg' },
+        { name: 'rbc', src: '/companylogo8.png' },
+        { name: 'rbc', src: '/image 15.png' },
+        { name: 'rbc', src: '/companyLogo3.svg' },
+        { name: 'manulife', src: '/image 13.png' },
 
 
     ]

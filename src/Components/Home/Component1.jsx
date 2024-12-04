@@ -109,7 +109,7 @@ function Component1() {
           className="absolute left-0 bottom-80 md:bottom-20 h-32 md:h-[50vh]"
         />
         <img
-          src="/public/backgroundBoy.png"
+          src="/backgroundBoy.png"
           alt="img"
           className="absolute right-0 bottom-20 hidden md:block h-[50vh]"
         />
