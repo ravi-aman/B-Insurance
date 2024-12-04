@@ -26,4 +26,4 @@ Please fork the repository and submit a pull request for any features or improve
 
 ## Authors
 
-- **Arnav Kumar** - *Information Tech. Student* - [Arnav Kumar](https://github.com/arnavkumar2k5) - Web Developer
+- **Ravikant Tiwari** - *BTech CSE MSIT Student* - [Ravikant Tiwari](https://www.linkedin.com/in/ravikant-tiwari-261079201/) - Web Developer
