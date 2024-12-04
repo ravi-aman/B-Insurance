@@ -98,7 +98,7 @@ function Component1() {
   // .........................
   return (
     <div className="text-[1rem] md:text-[0.8rem] flex flex-col justify-center items-center relative">
-      <div className="text-2xl md:text-4xl text-center mt-20 md:mt-30 mb-10 md:mb-20">
+      <div className="text-2xl md:text-5xl text-center mt-20 md:mt-30 mb-10 md:mb-20">
         <p className="font-semibold inline text-gray-800">Compare & Buy</p> from Canada's
         <p>Top Insurers and Save BIG</p>
       </div>
@@ -109,7 +109,7 @@ function Component1() {
           className="absolute left-0 bottom-80 md:bottom-20 h-32 md:h-[50vh]"
         />
         <img
-          src="/Home/img3.png"
+          src="/public/backgroundBoy.png"
           alt="img"
           className="absolute right-0 bottom-20 hidden md:block h-[50vh]"
         />

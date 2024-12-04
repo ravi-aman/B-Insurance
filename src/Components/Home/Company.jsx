@@ -9,13 +9,15 @@ export default function Company() {
     const logos = [
         { name: 'td', src: '/public/td.png' },
         { name: 'company', src: '/public/companylogo9.png' },
-        { name: 'company', src: '/public/companyLogo6.svg' },
+        { name: 'company', src: '/public/image 12.png' },
         { name: 'sunlife', src: '/public/sunlife.png' },
-        { name: 'manulife', src: '/public/manulife.png' },
         { name: 'rbc', src: '/public/rbc.svg' },
         { name: 'rbc', src: '/public/companylogo8.png' },
-        { name: 'rbc', src: '/public/desjardins.svg' },
+        { name: 'rbc', src: '/public/image 15.png' },
         { name: 'rbc', src: '/public/companyLogo3.svg' },
+        { name: 'manulife', src: '/public/image 13.png' },
+
+
     ]
 
     const allLogos = [...logos, ...logos]
@@ -58,14 +60,14 @@ export default function Company() {
                         {allLogos.map((logo, index) => (
                             <div
                                 key={index}
-                                className="flex items-center justify-center min-w-[120px] h-16 grayscale"
+                                className="flex items-center justify-center min-w-[120px] h-16"
                             >
                                 <img
                                     src={logo.src}
                                     alt={`${logo.name} logo`}
                                     className="max-w-full max-h-full object-contain"
                                     width={80}
-                                    height={40}
+                                    // height={40}
                                 />
                             </div>
                         ))}
