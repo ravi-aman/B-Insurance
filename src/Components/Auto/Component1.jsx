@@ -1,19 +1,11 @@
 import React from "react";
-
+import Company from "@/Components/Home/Company";
 function Component1() {
   return (
     <div className="bg-white">
       <div className="m-auto flex flex-col gap-10 md:gap-28 p-5 md:p-10">
         <div className="flex flex-col md:flex-row justify-center items-center md:gap-40">
-          <div className="flex flex-col text-center md:text-left md:text-lg pl-0 md:pl-20">
-            <span className="w-full font-semibold">
-              Get instant travel insurance quotes
-            </span>
-            <span>from 20 of Canada's Top Insurers</span>
-          </div>
-          <div className="mt-5 md:mt-0">
-            <img src="family1.png" alt="family1" className="h-16 md:h-20" />
-          </div>
+          <Company/>
         </div>
 
         <div className="flex flex-col justify-center items-center mx-auto gap-20 pb-10">
