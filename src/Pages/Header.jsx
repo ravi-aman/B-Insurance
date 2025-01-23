@@ -97,7 +97,10 @@ function Header() {
     <header className="bg-white shadow-sm" ref={headerRef}>
       <nav className="flex justify-between md:justify-center items-center p-2 w-full">
         <div className="md:w-1/3 flex justify-between items-center w-full">
+        <div className="flex items-center">
           <img src="logo.png" alt="logo" className="h-12 md:h-[3rem] md:pl-[100px]" />
+          <p id="bi">B-Insure</p>
+        </div>
           <img
             src="hamburger.png"
             alt="menu"

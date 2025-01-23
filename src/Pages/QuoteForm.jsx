@@ -4,6 +4,8 @@ import { Timestamp } from "firebase/firestore";
 
 function QuoteForm({ onClose }) {
   const [submitted, setSubmitted] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedCode, setSelectedCode] = useState("+40"); // Default selected code
   const navigate = useNavigate();
 
   const handleHomeRedirect = () => {
@@ -13,9 +15,6 @@ function QuoteForm({ onClose }) {
 
   const validateFormData = (formData) => {
     console.log("[Validation] Validating form data...");
-    // if (!formData.lookingFor) return "Please select the insurance type.";
-    // if (!["Life", "Travel", "Auto", "Commercial"].includes(formData.lookingFor))
-    //   return "Invalid insurance type selected.";
     if (!formData.planningToBuy) return "Please select when you plan to buy.";
     if (!formData.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email))
       return "Please enter a valid email address.";
@@ -40,23 +39,23 @@ function QuoteForm({ onClose }) {
       email: formData.get("email"),
       name: formData.get("name"),
       contactNumber: formData.get("contactNumber"),
-      countryCode: formData.get("countryCode"),
+      countryCode: selectedCode,
       timestamp: Timestamp.now(),
       readableTimestamp: new Date().toLocaleString(),
     };
 
-    console.log("[Form Submission] Extracted data:", data);
+    // console.log("Form Submission Extracted data:", data);
 
     const validationError = validateFormData(data);
     if (validationError) {
       console.error("[Validation Error]:", validationError);
-      alert(validationError); // Optional: Alert the user for better UX
+      alert(validationError);
       return;
     }
 
     try {
       console.log("[Server Communication] Sending data to the server...");
-      const response = await fetch("http://localhost:5137/submit-form", {
+      const response = await fetch("http://127.0.0.1:5000/submit_form", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -77,6 +76,25 @@ function QuoteForm({ onClose }) {
       alert("An error occurred while submitting the form. Please try again later.");
     }
   };
+
+  const toggleDropdown = () => setIsOpen(!isOpen);
+
+  const handleSelect = (code) => {
+    setSelectedCode(code);
+    setIsOpen(false);
+  };
+
+  const countryCodes = [
+    "+93", "+355", "+213", "+376", "+244", "+54", "+374", "+61", "+43", "+994",
+    "+973", "+880", "+375", "+32", "+501", "+229", "+975", "+591", "+387", "+267",
+    "+55", "+359", "+226", "+257", "+855", "+237", "+1", "+238", "+236", "+235",
+    "+56", "+86", "+57", "+269", "+243", "+242", "+682", "+506", "+385", "+53",
+    "+357", "+420", "+45", "+253", "+670", "+593", "+20", "+503", "+240", "+291",
+    "+372", "+251", "+679", "+358", "+33", "+241", "+220", "+995", "+49", "+233",
+    "+30", "+502", "+224", "+245", "+592", "+509", "+504", "+36", "+354", "+91",
+    "+62", "+98", "+964", "+353", "+972", "+39", "+225", "+81", "+962", "+7",
+    "+254",
+  ];
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
@@ -119,14 +137,43 @@ function QuoteForm({ onClose }) {
                   Contact number <span className="text-red-600">*</span>
                 </label>
                 <div className="flex items-center gap-2 rounded-full border-2 border-gray-300 p-2">
-                  <select
-                    name="countryCode"
-                    className="bg-white focus:outline-none"
-                    defaultValue="+40"
-                  >
-                    <option value="+91">+91</option>
-                    <option value="+40">+40</option>
-                  </select>
+                  <div className="relative">
+                    <button
+                      type="button"
+                      className="focus:outline-none text-left flex justify-between items-center"
+                      onClick={toggleDropdown}
+                    >
+                      <span>{selectedCode}</span>
+                      <svg
+                        className={`w-4 h-4 pl-1 transition-transform ${isOpen ? "rotate-180" : ""
+                          }`}
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </button>
+                    {isOpen && (
+                      <div className="absolute w-30 z-10 bg-white border border-gray-300 rounded-md shadow-lg max-h-40 overflow-auto mt-1">
+                        {countryCodes.map((code) => (
+                          <div
+                            key={code}
+                            className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                            onClick={() => handleSelect(code)}
+                          >
+                            {code}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                   <input
                     type="tel"
                     placeholder="Contact number"
@@ -147,7 +194,7 @@ function QuoteForm({ onClose }) {
               </p>
             </form>
           </div>
-          <div className="hidden md:block relative right-[-5px] ">
+          <div className="hidden md:block relative right-[-5px]">
             <img src="health.png" alt="health" className="h-[70vh] object-cover" />
           </div>
           <div className="absolute right-[-2%] top-[-2%]">
